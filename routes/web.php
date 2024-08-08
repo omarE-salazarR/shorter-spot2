@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/login', function () {
-    return false;
+    return 'hola';
 })->name('login');

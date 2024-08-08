@@ -7,10 +7,20 @@ use Illuminate\Support\Str;
 use App\Models\Url;
 use Illuminate\Validation\ValidationException;
 
+/**
+ * Class shorterController
+ * 
+ * This controller manages shortened URLs and their redirections. It handles
+ * creating, storing, and retrieving shortened URLs, as well as redirecting
+ * users to the original URLs based on the shortened version.
+ *
+ * @package App\Http\Controllers
+ */
+
 class shorterController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Creates the shortened link.
      *
      * @return \Illuminate\Http\Response
      */
@@ -25,7 +35,7 @@ class shorterController extends Controller
                                     ->where('short_url', 'like', $request->input('domain').'%')
                                     ->first();
             if($consultUrl){
-                response()->json(['short_url' => $consultUrl->short_url]);
+               return response()->json(['short_url' => $consultUrl->short_url]);
             }else{
                 $url = new Url();
                 $url->original_url = $request->input('url');
@@ -44,7 +54,7 @@ class shorterController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Validates if the requested link has an original URL.
      *
      * @return \Illuminate\Http\Response
      */

@@ -16,7 +16,7 @@ use App\Http\Controllers\AuthController;
 */
  
 Route::post('/register', [AuthController::class, 'register']);
-Route::post('/token', [AuthController::class, 'login']);
+Route::post('/token', [AuthController::class, 'token']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/obtainUrl', [shorterController::class, 'index']);

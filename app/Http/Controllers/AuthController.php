@@ -10,8 +10,23 @@ use Illuminate\Support\Facades\Hash;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Illuminate\Validation\ValidationException;
 
+/**
+ * Class AuthController
+ * 
+ * This controller handles user authentication, including registration and login.
+ * It manages user registration, validation, and login operations, and issues 
+ * tokens for authenticated users.
+ *
+ * @package App\Http\Controllers
+ */
+
 class AuthController extends Controller
 {
+     /**
+     * Register new user
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function register(Request $request)
     {
         try {
@@ -37,7 +52,12 @@ class AuthController extends Controller
         }
     }
 
-    public function login(Request $request)
+     /**
+     * Obtain token 
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function token(Request $request)
     {
         try {
             $request->validate([

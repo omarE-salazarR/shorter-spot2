@@ -1,26 +1,19 @@
-# Nombre de la Aplicación
+# Shorter-back
 
-Una breve descripción de lo que hace tu aplicación.
 
 ## Tabla de Contenidos
 
-1. [Introducción](#introducción)
-2. [Requisitos](#requisitos)
-3. [Instalación](#instalación)
-4. [Configuración](#configuración)
-5. [Ejecución](#ejecución)
-6. [Migraciones y Seeders](#migraciones-y-seeders)
-7. [Problemas Comunes](#problemas-comunes)
-8. [Contacto](#contacto)
+- [Introducción](#introducción)
+- [Instalación](#instalación)
+  - [Clonar el Repositorio](#clonar-el-repositorio)
+  - [Instalar Composer](#instalar-composer)
+  - [Instalar Ambientes](#instalar-ambientes)
+  - [Correr el Proyecto](#correr-el-proyecto)
+- [Intercambiar Entre Ambientes](#intercambiar-entre-ambientes)
 
 ## Introducción
 
-Este repositorio contiene la aplicación **Acortador de url backend**. Utiliza el script `init.sh` para configurar el entorno de desarrollo, producción y pruebas de manera automatizada.
-
-## Requisitos
-
-- [Nombre del Sistema] versión [número de versión]
-- [Otro software necesario, por ejemplo, PHP, Composer]
+Este repositorio contiene la aplicación **Acortador de URL Backend**. Utiliza el script `init.sh` para configurar el entorno de desarrollo, producción y pruebas de manera automatizada.
 
 ## Instalación
 
@@ -29,5 +22,34 @@ Este repositorio contiene la aplicación **Acortador de url backend**. Utiliza e
 Clona el repositorio en tu máquina local:
 
 ```bash
-git clone https://github.com/tu_usuario/tu_repositorio.git
-cd tu_repositorio
+git clone https://github.com/omarE-salazarR/shorter-spot2.git
+cd shorter-spot2
+```
+#### Clonar el Repositorio
+
+Clona el repositorio en tu máquina local:
+
+#### Instalar Composer
+Instala las dependencias del proyecto utilizando Composer:
+```bash
+- composer install
+```
+##### Instalar Ambientes
+Ejecuta el script init.sh para configurar el entorno:
+Este script te solicitará el ambiente a instalar y los datos de la base de datos para realizar la configuración del ambiente.
+```bash
+- ./init.sh
+```
+
+###### Correr el Proyecto
+Inicia el servidor de desarrollo de Laravel:
+```bash
+php artisan serve
+```
+###### Intercambiar Entre Ambientes
+Para cambiar entre diferentes configuraciones de ambiente, utiliza los siguientes comandos:
+```bash
+cp .env.production .env
+cp .env.local .env
+cp .env.test .env
+```
